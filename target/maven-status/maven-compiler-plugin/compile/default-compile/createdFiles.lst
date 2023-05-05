@@ -1,0 +1,5 @@
+com\esprit\microservice\entities\Reservation.class
+com\esprit\microservice\Repositories\ReservationRepository.class
+com\esprit\microservice\services\Reservationservice.class
+com\esprit\microservice\controllers\ReservationRestApi.class
+com\esprit\microservice\AgenceDeVoyageMicroProjectApplication.class
