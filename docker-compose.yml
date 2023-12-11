@@ -1,0 +1,47 @@
+version: "2.7.4"
+services:
+ 
+
+ 
+  maisonhote:
+    container_name: offre
+    build: C:\Users\hamza\Downloads\MaisonHoteMicroservice
+    ports:
+      - "8081:8081"
+    hostname: offre
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_2:3306/offre?autoReconnect=true&useSSL=false
+     
+    image: "offre"
+    depends_on:
+      - mysql_2
+ 
+
+   
+  mysql_2:
+    image: "mysql:5.6"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=offre
+    ports:
+      - 3308:3306
+     
+  discovery:
+    build: C:\workspace spring\EurekaServer
+    ports:
+      - "8761:8761"
+    image: "discovery-service"
+  transport:
+    container_name: transport
+    build: C:\Users\hamza\Downloads\transport
+    ports:
+      - "8085:8085"
+    hostname: transport
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+ 
+     
+    image: "reservation"
+  
+  
