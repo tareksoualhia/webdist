@@ -1,0 +1,114 @@
+version: "2.7.4"
+services:
+
+  maisonhote:
+    container_name: maisonhotetest
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\MaisonHoteMicroservice
+    ports:
+      - "8081:8081"
+    hostname: maisonhotetest
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_2:3306/agencevoyage?autoReconnect=true&useSSL=false
+
+    image: "maisonhotetest"
+    depends_on:
+      - mysql_2
+
+  reservation:
+    container_name: reservation
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\AgenceDeVoyage_MicroProject
+    ports:
+      - "8082:8082"
+    hostname: reservation
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+    image: "reservation"
+
+  transport:
+    container_name: transport
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\transport
+    ports:
+      - "8086:8086"
+    hostname: transport
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+    image: "transport"
+
+  hotel:
+    container_name: hotel
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\yassmine\AgenceDeVoyage
+    ports:
+      - "8088:8088"
+    hostname: hotel
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+    image: "hotel"
+
+  apigateway:
+    container_name: apigateway
+    build: C:\Users\hamza\Downloads\gateway-service-eureka-config
+    ports:
+      - "8089:8089"
+    hostname: apigateway
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+    image: "apigateway"
+    depends_on:
+      - discovery
+
+  offre:
+    container_name: offre
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\Offre
+    ports:
+      - "8084:8084"
+    hostname: offre
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_3:3306/offre?autoReconnect=true&useSSL=false
+    image: "offre"
+    depends_on:
+      - mysql_3
+
+  mysql_2:
+    image: "mysql:5.6"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=agencevoyage
+    ports:
+      - 3308:3306
+  mysql_3:
+    image: "mysql:5.6"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=offre
+    ports:
+      - 3309:3306
+
+  userservicemongo:
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\mongodb
+    ports:
+      - "5000:5000"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka
+    command: npm start
+
+    image: userservicemongo
+    depends_on:
+      - discovery
+
+  discovery:
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\EurekaServer
+    ports:
+      - "8761:8761"
+    image: "discovery-service"
+
+  angular-service:
+    # The name of the service
+    container_name: angularcontainer # Container name
+    build: C:\Users\hamza\Desktop\agencedevoyagesw\angular # Location of our Dockerfile
+    volumes:
+      # Volume binding
+      - './angular:/usr/src/app'
+    ports:
+      - '4200:4200' # Port mapping
