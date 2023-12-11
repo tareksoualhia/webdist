@@ -1,0 +1,27 @@
+version: "2.7"
+services:
+
+
+  hotel:
+   
+    build:  C:\Users\ASUS\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\AgenceDeVoyage
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8091:8082"
+    image: "hotel-service"
+   
+  hotel_B:
+   
+    build:  C:\Users\ASUS\Documents\workspace-spring-tool-suite-4-4.16.0.RELEASE\AgenceDeVoyage
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - "8092:8085"
+    image: "hotel-service"
+   
+  discovery:
+    build: C:\Users\ASUS\Documents\workspace-sts-3.8.4.RELEASE\Eureka
+    ports:
+      - "8761:8761"
+    image: "eureka-service"
