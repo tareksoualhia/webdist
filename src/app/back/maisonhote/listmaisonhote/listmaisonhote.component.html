@@ -1,0 +1,53 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="dashboard-content">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+    <div class="dashboard-list-box">
+    <h4 class="gray">All Guest Houses</h4>
+    <div class="table-box">
+    <table class="basic-table booking-table">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Adress</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Room</th>
+    <th>Image</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+
+        <tr *ngFor="let i of listmaisonhote ; let u=index" >
+            <td>{{i.nom}}</td>
+            <td>{{i.adresse}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.chambre}}</td>
+            <td>{{i.prix}}</td>
+            <td><img style="width: 10%;" src='{{ "http://localhost:8089/MaisonHote/Images/" + i.image}}'/></td>
+            <td>
+                <a class="button gray"><i class="sl sl-icon-pencil" [routerLink]=" ['/editmaisonhote',i.id]"></i></a>
+                <a  class="button gray" ><i class="sl sl-icon-close" (click)="delete(i.id,u)"></i></a>
+
+                </td>
+
+        </tr>
+
+    </table>
+    </div>
+    </div>
+    <div class="pagination-container">
+    <nav class="pagination">
+    <ul>
+    <li><a href="#" class="current-page">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <app-footer></app-footer>

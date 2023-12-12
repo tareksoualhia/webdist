@@ -1,0 +1,92 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div id="container-wrapper">
+
+    <div id="container-wrapper">
+
+        <div id="dashboard">
+
+        <a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
+
+
+        <div class="dashboard-content">
+        <div class="dashboard-form">
+        <div class="row">
+
+
+
+        <div class="col-lg-6 col-md-6 col-xs-12 padding-left-30">
+        <div class="dashboard-list-box margin-top-0">
+        <h4 class="gray">Update your Booking</h4>
+        <div class="dashboard-list-box-static">
+            <div class="container">
+
+                <form>
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="text" class="form-control"   placeholder="Enter nom"  [(ngModel)]="booking.nom"  name="nom">
+                  </div>
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputPassword1">Last Name</label>
+                    <input type="text" class="form-control" placeholder=" Entrer prenom" [(ngModel)]="booking.prenom" name="prenom">
+                  </div>
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="text" class="form-control" placeholder=" Entrer email" [(ngModel)]="booking.email" name="email" >
+                  </div>
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputPassword1">Booking Date</label>
+                    <input type="text" class="form-control" placeholder=" Entrer date Reservation" [(ngModel)]="booking.dateReservation" name="dateReservation">
+                  </div>
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputPassword1">Booking Hour</label>
+                    <input type="text" class="form-control" placeholder=" Entrer heure reservation" [(ngModel)]="booking.heureReservation" name="heureReservation">
+                  </div>
+
+                  <div class="form-group" class="col-lg-4">
+                    <label for="exampleInputPassword1">Duree</label>
+                    <input type="text" class="form-control" placeholder=" Entrer duree" [(ngModel)]="booking.duree" name="duree">
+                  </div>
+                  <div class="col-lg-4">
+                    <label>Guest House</label>
+                    <select class="chosen-select-no-single" class="form-control" id="maisonhote" [(ngModel)]="booking.maisonhote" name="maisonhote">
+
+                      <option *ngFor="let type of types" [value]="type"> {{ type }}</option>
+
+                    </select>
+                    </div>
+                    <div class="col-lg-4">
+                      <label>Hotel</label>
+                      <select  class="form-control" id="hotel" [(ngModel)]="booking.hotel" name="hotel" >
+
+                        <option *ngFor="let type of types1" [value]="type"> {{ type }}</option>
+
+                      </select>
+                      </div>
+                      <div class="col-lg-4">
+                        <label>Transport</label>
+                        <select class="chosen-select-no-single" class="form-control" id="transport" [(ngModel)]="booking.transport" name="transport">
+
+                          <option *ngFor="let type of types2" [value]="type"> {{ type }}</option>
+
+                        </select>
+                        </div>
+                  <a  type="button" class="btn btn-primary"(click)="update()"  [routerLink]="['/listbooking']" >Update</a>
+                </form>
+
+              </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="copyrights">
+        <p>2018 <i class="fa fa-copyright" aria-hidden="true"></i> Yatra by <a href="https://www.cyclonethemes.com/" target="_blank">Cyclone Themes</a></p>
+        </div>
+        </div>
+
+        </div>

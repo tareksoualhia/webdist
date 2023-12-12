@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+<section class="breadcrumb-outer text-center">
+    <div class="container">
+    <div class="breadcrumb-content">
+    <h2>Detail Page</h2>
+    <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="hotel.html">Guest House</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Detail Page</li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    <div class="section-overlay"></div>
+</section>
+<section class="main-content detail pad-bottom-80">
+    <div class="container">
+    <div class="row">
+    <div id="content" class="col-lg-8">
+    <div class="detail-content content-wrapper">
+    <div class="detail-info">
+    <div class="detail-info-content clearfix">
+    <h2>{{maisonhote.nom}}</h2>
+    <div class="deal-rating">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-o"></span>
+    <span class="fa fa-star-o"></span>
+    </div>
+    </div>
+    </div>
+    <div class="gallery detail-box">
+
+    <div id="in_th_030" class="carousel slide in_th_brdr_img_030 thumb_scroll_x swipe_x ps_easeOutQuint" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
+
+
+
+    <div class="carousel-inner" role="listbox">
+
+    <div class="carousel-item active">
+
+    <img src='{{ "http://localhost:8089/MaisonHote/Images/" + maisonhote.image}}' alt="in_th_030_01" />
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    <div class="description detail-box">
+    <div class="detail-title">
+    <h3>Description</h3>
+    </div>
+    <div class="description-content">
+    <p>{{maisonhote.description}}</p>
+    <table>
+    <thead>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="title">Adress</td>
+            <td><i class="fa fa-map-marker" aria-hidden="true"></i> {{maisonhote.adresse}}</td>
+            </tr>
+    <tr>
+    <td class="title">Nombre of rooms</td>
+    <td><i class="fa fa-map-marker" aria-hidden="true"></i> {{maisonhote.chambre}}</td>
+    </tr>
+
+    </tbody>
+    </table>
+    </div>
+    </div>
+    <div class="location-map detail-box">
+    <div class="detail-title">
+    <h3>Location Map</h3>
+    </div>
+    <div class="map-frame">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28185.510535377554!2d86.90746548742861!3d27.98811904127681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z4KS44KSX4KSw4KSu4KS-4KSl4KS-!5e0!3m2!1sne!2snp!4v1544516755007" style="border:0" allowfullscreen></iframe>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    <div id="sidebar-sticky" class="col-lg-4">
+    <aside class="detail-sidebar sidebar-wrapper">
+
+    <div class="sidebar-item">
+    <div class="detail-title">
+    <h3>Related Room</h3>
+    </div>
+    <div class="sidebar-content sidebar-slider">
+    <div class="sidebar-package">
+    <div class="sidebar-package-image">
+    <img src='{{ "http://localhost:8089/MaisonHote/Images/" + maisonhote.image}}' alt="Images">
+    </div>
+    <div class="destination-content sidebar-package-content">
+    <h4><a href="hotel-detail.html">{{maisonhote.nom}}</a></h4>
+    <div class="deal-rating">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-o"></span>
+    <span class="fa fa-star-o"></span>
+    </div>
+    <p><i class="flaticon-time"></i> Starting from <span class="bold">{{maisonhote.prix}} DT</span> </p>
+    <a href="#" class="btn-blue btn-red" >Book Now</a>
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="sidebar-package">
+    <div class="sidebar-package-image">
+
+    </div>
+
+    </div>
+
+    </div>
+    </div>
+    <div class="sidebar-item sidebar-helpline">
+    <div class="sidebar-helpline-content">
+    <h3>Any Questions?</h3>
+    <p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sedpr do eiusmod tempor incididunt ut.</p>
+    <p><i class="flaticon-phone-call"></i> (012)-345-6789</p>
+    <p><i class="flaticon-mail"></i> <a href="https://htmldesigntemplates.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="61150e14130f15130017040d21150412150c00080d4f020e0c">[email&#160;protected]</a></p>
+    </div>
+    </div>
+    </aside>
+    </div>
+    </div>
+    </div>
+</section>
+
+<app-footerfront></app-footerfront>

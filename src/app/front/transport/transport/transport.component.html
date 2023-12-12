@@ -1,0 +1,221 @@
+
+<app-navbar></app-navbar>
+
+<section class="breadcrumb-outer text-center">
+  <div class="container">
+  <div class="breadcrumb-content">
+  <h2>Transport</h2>
+  <h4 class="white"></h4>
+  <nav aria-label="breadcrumb">
+  <ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="">Home</a></li>
+  <li class="breadcrumb-item active" aria-current="page">Rent a car</li>
+  </ul>
+  </nav>
+  </div>
+  </div>
+  <div class="section-overlay"></div>
+  </section>
+
+
+  <section class="cars-destinations">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-8">
+  <div class="cars-head">
+  <div class="cars-sort pull-left">
+  <div class="form-group">
+  <select name="custom-select-1" class="selectpicker form-control" tabindex="1">
+  <option value="0">Sort By Price</option>
+  <option value="1">0</option>
+  <option value="2">1</option>
+  <option value="3">2</option>
+  <option value="4">3</option>
+  <option value="5">4</option>
+  </select>
+  </div>
+  <div class="form-group">
+  <select name="custom-select-1" class="selectpicker form-control" tabindex="1">
+  <option value="0">Sort By Ranking</option>
+  <option value="1">0</option>
+  <option value="2">1</option>
+  <option value="3">2</option>
+  <option value="4">3</option>
+  <option value="5">4</option>
+  </select>
+  </div>
+  </div>
+  <div class="click-menu pull-right">
+  <span>View:</span>
+  <div class="change-list"><a href=""><i class="fa fa-bars"></i></a></div>
+  <div class="change-grid f-active"><a href="car-grid-view.html"><i class="fa fa-th"></i></a></div>
+  </div>
+  </div>
+  <div class="cars-grid">
+  <div class="row">
+
+
+
+  <div class="col-md-6 col-sm-6 col-xs-12" *ngFor="let i of list">
+  <div class="destination-item box-item">
+   <div class="destination-image text-center">
+    <img style="width: 60%;" src='{{ "http://localhost:8089/transport/Images/" + i.image}}'/>
+  </div>
+  <div class="destination-content">
+  <h5><strong class="color-red-3">{{ i.prix}} DT</strong> / day</h5>
+  <h6>{{i.categorie}}</h6>
+  <h3>
+    <a [routerLink]="['/detailtransport',i.id]">{{i.modele}}</a>
+  </h3>
+
+
+  <div class="deal-rating">
+
+    <a href="#" class="btn-blue btn-red">Book Now</a>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+  <div class="col-xs-12">
+  <div class="pagination-content text-center">
+  <ul class="pagination">
+  <li><a href=""><i class="fa fa-angle-double-left" aria-hidden="true"></i></a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a >2</a></li>
+  <li><a>3</a></li>
+  <li><a >4</a></li>
+  <li><a ><i class="fa fa-angle-double-right" aria-hidden="true"></i></a></li>
+  </ul>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <div id="sidebar" class="col-lg-4">
+  <aside class="detail-sidebar sidebar-wrapper">
+    <div class="sidebar-item">
+      <div class="detail-title">
+      <h3>Car Types</h3>
+      </div>
+      <div class="sidebar-content">
+      <form>
+      <div class="checkbox">
+      <label>
+      <input type="checkbox">Economy
+       </label>
+      </div>
+      <div class="checkbox">
+      <label>
+      <input type="checkbox">Sport Car
+      </label>
+      </div>
+      <div class="checkbox">
+        <label>
+        <input type="checkbox">Premuim
+        </label>
+        </div>
+        <div class="checkbox">
+          <label>
+          <input type="checkbox">Luxury
+          </label>
+          </div>
+      </form>
+      </div>
+      </div>
+
+  <div class="sidebar-item sidebar-item-dark">
+  <div class="detail-title">
+  <h3>Car Rent</h3>
+  </div>
+  <form>
+  <div class="row" >
+  <div class="form-group col-lg-12">
+  <input type="text" class="form-control" id="depart" placeholder="Picking Up">
+  </div>
+  <div class="form-group col-lg-12">
+  <input type="text" class="form-control" id="return" placeholder="Dropping Off">
+  </div>
+  <div class="form-group col-lg-6">
+  <div class='input-group date' id='datetimepicker1'>
+  <input type='text' class="form-control" value="PickUp Date" />
+  <span class="input-group-addon">
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  </span>
+  </div>
+  </div>
+  <div class="form-group col-lg-6">
+  <select name="custom-select-1" class="selectpicker form-control" tabindex="1">
+  <option>Hours</option>
+  <option>12:30 AM</option>
+  <option>01:00 AM</option>
+  <option>01:30 AM</option>
+  <option>02:00 AM</option>
+  <option>02:30 AM</option>
+  <option>03:00 AM</option>
+  <option>03:30 AM</option>
+  <option>04:00 AM</option>
+  <option>04:30 AM</option>
+  <option>05:00 AM</option>
+  <option>05:30 AM</option>
+  <option>06:00 AM</option>
+  <option>06:30 AM</option>
+  <option>07:00 AM</option>
+  <option>07:30 AM</option>
+  <option>08:00 AM</option>
+  <option>08:30 AM</option>
+  </select>
+  </div>
+   <div class="form-group col-lg-6">
+  <div class='input-group date' id='datetimepicker2'>
+  <input type='text' class="form-control" value="Drop Off Date" />
+  <span class="input-group-addon">
+  <i class="fa fa-calendar" aria-hidden="true"></i>
+  </span>
+  </div>
+  </div>
+  <div class="form-group col-lg-6">
+  <select name="custom-select-2" class="selectpicker form-control" tabindex="1">
+  <option>Hours</option>
+  <option>12:30 AM</option>
+  <option>01:00 AM</option>
+  <option>01:30 AM</option>
+  <option>02:00 AM</option>
+  <option>02:30 AM</option>
+  <option>03:00 AM</option>
+  <option>03:30 AM</option>
+  <option>04:00 AM</option>
+  <option>04:30 AM</option>
+  <option>05:00 AM</option>
+  <option>05:30 AM</option>
+  <option>06:00 AM</option>
+  <option>06:30 AM</option>
+  <option>07:00 AM</option>
+  <option>07:30 AM</option>
+  <option>08:00 AM</option>
+  <option>08:30 AM</option>
+  </select>
+  </div>
+  <div class="col-lg-12">
+  <div class="comment-btn">
+  <a href="#" class="btn-blue btn-red">Search Now</a>
+  </div>
+  </div>
+  </div>
+  </form>
+  </div>
+
+
+
+
+  </aside>
+  </div>
+  </div>
+  </div>
+  </section>
+  <app-footerfront></app-footerfront>
+
+

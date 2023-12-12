@@ -1,0 +1,58 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="dashboard-content">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+    <div class="dashboard-list-box">
+    <h4 class="gray">All Transports</h4>
+    <div class="table-box">
+    <table class="basic-table booking-table">
+    <thead>
+    <tr>
+    <th>Model</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of list; let u=index ">
+        <td>{{i.modele}}</td>
+
+        <td >{{i.prix}}</td>
+        <td>{{i.categorie}}</td>
+        <td>{{i.description}}</td>
+        <td style="margin: 20px;"><img style="width: 20%; " src='{{ "http://localhost:8089/transport/Images/" + i.image}}'/></td>
+
+
+
+        <td>
+          <a class="button gray"><i class="sl sl-icon-pencil" [routerLink]="['/edittransport',i.id]"></i></a>
+          <a  class="button gray" ><i class="sl sl-icon-close" (click)="delete(i.id,u)"></i></a>
+          </td>
+
+
+
+
+
+    </tbody>
+
+    </table>
+    </div>
+    </div>
+    <div class="pagination-container">
+    <nav class="pagination">
+    <ul>
+    <li><a href="" class="current-page">1</a></li>
+
+    <li><a href=""><i class="sl sl-icon-arrow-right"></i></a></li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    <app-footer></app-footer>

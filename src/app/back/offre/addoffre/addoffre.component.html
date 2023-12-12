@@ -1,0 +1,120 @@
+
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <div class="dashboard-content">
+        <div class="row">
+
+        <div class="col-lg-12 col-sm-12">
+        <div id="add-listing">
+
+
+
+
+        <div class="add-listing-section">
+
+        <div class="add-listing-headline">
+        <h3><i class="sl sl-icon-map"></i> Offer</h3>
+        </div>
+        <div class="submit-section">
+
+            <form ngForm #f="ngForm" enctype="multipart/form-data" >
+
+        <div class="row with-forms">
+
+
+
+        <div class="col-md-6">
+        <label>Name</label>
+        <input type="text"
+        name="nom"
+        [(ngModel)]="Offre.nom"
+        #nom="ngModel"
+
+        >
+        </div>
+        <div class="col-md-6">
+          <label>Type</label>
+          <select class="chosen-select-no-single" class="form-control" id="categorie" [(ngModel)]="Offre.type"   name="type">
+
+            <option *ngFor="let type of types" [value]="type"> {{ type }}</option>
+
+          </select>
+          </div>
+
+
+        <div class="col-md-6">
+        <label>Description</label>
+        <input type="text"
+        name="description"
+        [(ngModel)]="Offre.description"
+        #description="ngModel"
+
+        >
+        </div>
+
+        <div class="col-md-6">
+            <label>Price</label>
+            <input type="number"
+            name="prix"
+            [(ngModel)]="Offre.prix"
+            #prix="ngModel">
+            </div>
+
+            <div class="col-md-6">
+              <label>Start Date</label>
+              <input type="text"
+              name="datedebut"
+              [(ngModel)]="Offre.datedebut"
+              #prix="ngModel">
+              </div>
+
+              <div class="col-md-6">
+                <label>End Date</label>
+                <input type="text"
+                name="datefin"
+                [(ngModel)]="Offre.datefin"
+                #prix="ngModel">
+                </div>
+
+    <!-- upload and reset button -->
+    <div class="media-body mt-75 ml-1">
+        <button
+          (click)="file.click()"
+
+        class="btn btn-info"
+          for="account-upload"
+          rippleEffect
+        >
+          Upload
+        </button>
+        <input
+          type="file"
+          #file
+          name="image"
+           hidden
+          accept="image/*"
+          (change)="onSelectFile($event)"
+        />
+
+      </div>
+      <!--/ upload and reset button -->
+
+        <!-- <a href="#" class="button add-pricing-list-item">Add Hotel</a> -->
+        <button type="button" (click)="save()"  [routerLink]="['/alloffre']" class="btn btn-info">Add</button>
+
+        </div>
+
+        </form>
+
+        </div>
+        </div>
+
+
+
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+        <app-footer></app-footer>

@@ -1,0 +1,95 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+
+<div class="dashboard-content">
+  <div class="row">
+
+  <div class="col-lg-12 col-sm-12">
+  <div id="add-listing">
+
+
+
+
+  <div class="add-listing-section">
+
+  <div class="add-listing-headline">
+  <h3><i class="sl sl-icon-map"></i> Update Transport</h3>
+  </div>
+  <div class="submit-section">
+
+      <form ngForm #f="ngForm" enctype="multipart/form-data" >
+
+  <div class="row with-forms">
+
+
+
+  <div class="col-md-6">
+  <label>Model</label>
+  <input type="text"
+  name="modele"
+  [(ngModel)]="transport.modele"
+  #modele="ngModel">
+  </div>
+  <div class="col-md-6">
+    <label>Category</label>
+    <select class="chosen-select-no-single" class="form-control" id="categorie" [(ngModel)]="transport.categorie"   name="categorie">
+
+      <option *ngFor="let categorie of categories" [value]="categorie"> {{ categorie }}</option>
+
+    </select>
+    </div>
+
+
+  <div class="col-md-6">
+      <label>Price</label>
+      <input type="number"
+      name="prix"
+      [(ngModel)]="transport.prix"
+      #prix="ngModel">
+      </div>
+      <div class="col-md-6">
+        <label>Description</label>
+        <input type="text"
+        name="description"
+        [(ngModel)]="transport.description"
+        #description="ngModel">
+        </div>
+
+<div class="media-body mt-75 ml-1">
+  <button
+    (click)="file.click()"
+
+  class="btn btn-info"
+    for="account-upload"
+    rippleEffect
+  >
+    Upload
+  </button>
+  <input
+    type="file"
+    #file
+    name="image"
+     hidden
+    accept="image/*"
+    (change)="onSelectFile($event)"
+  />
+
+</div>
+  </div>
+
+  </form>
+
+  </div>
+  </div>
+
+
+  <button type="button" (click)="update()" [routerLink]="['/listtransport']" routerLinkActive="router-link-active"    class="btn btn-info">Update</button>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+<app-footer></app-footer>

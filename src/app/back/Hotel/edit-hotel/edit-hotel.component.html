@@ -1,0 +1,93 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+
+
+<div class="dashboard-content">
+  <div class="row">
+
+  <div class="col-lg-12 col-sm-12">
+  <div id="add-listing">
+
+
+
+
+  <div class="add-listing-section">
+
+  <div class="add-listing-headline">
+  <h3><i class="sl sl-icon-map"></i> Hotel</h3>
+  </div>
+  <div class="submit-section">
+
+      <form ngForm #f="ngForm" enctype="multipart/form-data" >
+
+  <div class="row with-forms">
+
+
+
+  <div class="col-md-6">
+  <label>Name</label>
+  <input type="text"
+  name="nom"
+  [(ngModel)]="hotel.nom"
+  #nom="ngModel">
+  </div>
+
+  <div class="col-md-6">
+    <label>Description</label>
+    <input type="text"
+    name="description"
+    [(ngModel)]="hotel.description"
+    #description="ngModel">
+    </div>
+
+  <div class="col-md-6">
+      <label>Price</label>
+      <input type="number"
+      name="prix"
+      [(ngModel)]="hotel.prix"
+      #prix="ngModel">
+      </div>
+
+<!-- upload and reset button -->
+<div class="media-body mt-75 ml-1">
+  <button
+    (click)="file.click()"
+
+  class="btn btn-info"
+    for="account-upload"
+    rippleEffect
+  >
+    Upload
+  </button>
+  <input
+    type="file"
+    #file
+    name="image"
+     hidden
+    accept="image/*"
+    (change)="onSelectFile($event)"
+  />
+
+</div>
+<!--/ upload and reset button -->
+
+
+
+
+  </div>
+
+  </form>
+
+  </div>
+  </div>
+
+
+  <button type="button" (click)="update()" [routerLink]="['/listhotel']" routerLinkActive="router-link-active"    class="btn btn-info">update</button>
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+<app-footer></app-footer>

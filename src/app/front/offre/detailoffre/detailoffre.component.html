@@ -1,0 +1,146 @@
+<app-navbar></app-navbar>
+<section class="breadcrumb-outer text-center">
+    <div class="container">
+    <div class="breadcrumb-content">
+    <h2>welcome</h2>
+    <nav aria-label="breadcrumb">
+    <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a >Home </a></li>
+    <li class="breadcrumb-item"><a >offre</a></li>
+     <li class="breadcrumb-item active" aria-current="page">Offer Detail</li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    <div class="section-overlay"></div>
+    </section>
+
+    <section class="main-content detail">
+    <div class="container">
+    <div class="row">
+    <div id="content" class="col-lg-8">
+    <div class="detail-content content-wrapper">
+    <div class="detail-info">
+    <div class="detail-info-content clearfix">
+    <h2>{{offre.nom}}</h2>
+    <p class="detail-info-price"><span class="bold">{{offre.prix}}</span></p>
+    <div class="deal-rating">
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star-o"></span>
+    <span class="fa fa-star-o"></span>
+    </div>
+    </div>
+    </div>
+    <div class="gallery detail-box">
+
+    <div id="in_th_030" class="carousel slide in_th_brdr_img_030 thumb_scroll_x swipe_x ps_easeOutQuint" data-ride="carousel" data-pause="hover" data-interval="4000" data-duration="2000">
+
+
+
+    <div class="carousel-inner" role="listbox">
+
+    <div class="item active">
+
+    <img src='{{ "http://localhost:8089/offre/Images/" + offre.image}}'alt="in_th_030_01" />
+    </div>
+
+
+
+
+
+
+
+    </div>
+    </div>
+    </div>
+    <div class="description detail-box">
+    <div class="detail-title">
+    <h3>Description</h3>
+    </div>
+    <div class="description-content">
+    <p>{{offre.description}}</p>
+    <table>
+    <thead>
+    </thead>
+    <tbody>
+    <tr>
+
+
+    </tr>
+
+    <tr>
+    <td class="title">DATE</td>
+    <td>
+       {{offre.datedebut}}
+    </td>
+    <td>
+        {{offre.datefin}}
+    </td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    <div class="location-map detail-box">
+    <div class="detail-title">
+    <h3>Location Map</h3>
+    </div>
+    <div class="map-frame">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28185.510535377554!2d86.90746548742861!3d27.98811904127681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z4KS44KSX4KSw4KSu4KS-4KSl4KS-!5e0!3m2!1sne!2snp!4v1544516755007" style="border:0" allowfullscreen></iframe>
+    </div>
+    </div>
+
+
+
+    <div class="comments-form detail-box">
+    <div class="detail-title">
+    <h3>Add Your Comment</h3>
+    </div>
+    <form>
+    <div class="row">
+    <div class="textarea form-group col-lg-12">
+    <label for="Name">Your Comment:</label>
+    <textarea></textarea>
+    </div>
+    <div class="form-group col-lg-6">
+    <label for="Name">Name:</label>
+    <input type="email" class="form-control" id="Name">
+    </div>
+    <div class="form-group col-lg-6">
+    <label for="email">Email address:</label>
+    <input type="email" class="form-control" id="email">
+    </div>
+    <div class="form-group col-lg-12">
+    <label for="website">Website:</label>
+    <input type="email" class="form-control" id="website">
+    </div>
+    <div class="col-lg-12">
+    <div class="comment-btn">
+    <a href="#" class="btn-blue btn-red">Submit Comment</a>
+    </div>
+    </div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    <div id="sidebar-sticky" class="col-lg-4">
+    <aside class="detail-sidebar sidebar-wrapper">
+
+
+    <div class="sidebar-item sidebar-helpline">
+    <div class="sidebar-helpline-content">
+    <h3>Any Questions?</h3>
+    <p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sedpr do eiusmod tempor incididunt ut.</p>
+    <p><i class="flaticon-phone-call"></i> (216)75 000 000</p>
+    <p><i class="flaticon-mail"></i> <a href="https://htmldesigntemplates.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="14607b61667a606675627178546071676079757d783a777b79">[email&#160;protected]</a></p>
+    </div>
+    </div>
+    </aside>
+    </div>
+    </div>
+    </div>
+    </section>
+<app-footerfront></app-footerfront>

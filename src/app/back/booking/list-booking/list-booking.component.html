@@ -1,0 +1,65 @@
+<app-header></app-header>
+<app-sidebar></app-sidebar>
+<div class="dashboard-content">
+    <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+    <div class="dashboard-list-box">
+    <h4 class="gray">All Bookings</h4>
+    <div class="table-box">
+    <table class="basic-table booking-table">
+    <thead>
+    <tr >
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Transport</th>
+    <th>Guest House</th>
+    <th>Hotel</th>
+    <th> Booking Date</th>
+    <th> Booking Hour</th>
+
+    <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+
+    <tr *ngFor="let i of list ; let u=index">
+    <td>{{i.nom}}</td>
+    <td >{{i.prenom}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.transport}}</td>
+    <td> {{i.maisonhote}}</td>
+    <td>{{i.hotel}}</td>
+    <td> {{i.dateReservation}}</td>
+    <td>{{i.heureReservation}}</td>
+
+
+    <td>
+    <a [routerLink]="['/editbooking',i.id]"  class="button gray"><i class="sl sl-icon-pencil"></i></a>
+    <a  class="button gray"><i class="sl sl-icon-close"  (click)="delete(i.id,u)"></i></a>
+    </td>
+    </tr>
+
+
+
+
+
+    </tbody>
+    </table>
+    </div>
+    </div>
+    <div class="pagination-container">
+    <nav class="pagination">
+    <ul>
+    <li><a href="#" class="current-page">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#"><i class="sl sl-icon-arrow-right"></i></a></li>
+    </ul>
+    </nav>
+    </div>
+    </div>
+    </div>
+</div>
+    <app-footer></app-footer>

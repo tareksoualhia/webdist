@@ -1,0 +1,103 @@
+<app-navbar></app-navbar>
+<section class="breadcrumb-outer text-center">
+  <div class="container">
+  <div class="breadcrumb-content">
+  <h2>Booking Page</h2>
+  <nav aria-label="breadcrumb">
+  <ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="#">Home</a></li>
+  
+  <li class="breadcrumb-item active" aria-current="page">Booking</li>
+  </ul>
+  </nav>
+  </div>
+  </div>
+  <div class="section-overlay"></div>
+  </section>
+
+  <section class="booking">
+  <div class="container">
+  <div class="row">
+  <div class="col-lg-8">
+  <div class="booking-form booking-outer">
+
+  <form ngForm #f="ngForm"  enctype="multipart/form-data">
+  <div class="row">
+  <div class="form-group col-lg-6">
+  <label>First Name</label>
+  <input type="text" class="form-control"  [(ngModel)]="booking.nom"  name="nom" placeholder="Entrer votre nom">
+  </div>
+  <div class="form-group col-lg-6">
+  <label>Last Name</label>
+  <input type="text" class="form-control"  placeholder="Enter votre prenom"  [(ngModel)]="booking.prenom" name="prenom">
+  </div>
+  <div class="form-group col-lg-6">
+  <label>Email</label>
+  <input type="email" class="form-control" [(ngModel)]="booking.email" name="email" placeholder="abc@xyz.com">
+  </div>
+
+  <div class="form-group col-lg-6">
+  <label>Booking Date</label>
+  <input type="date" class="form-control" placeholder=" Entrer votre date Reservation" [(ngModel)]="booking.dateReservation" name="dateReservation">
+  </div>
+  <div class="form-group col-lg-6 col-left-padding">
+  <label>Booking Hour</label>
+  <input type="time"  class="form-control" placeholder=" Entrer heure reservation" [(ngModel)]="booking.heureReservation" name="heureReservation">
+  </div>
+  <div class="form-group col-lg-6">
+  <label>Duration</label>
+  <input type="text" class="form-control" placeholder=" Entrer duree" [(ngModel)]="booking.duree" name="duree">
+  </div>
+
+  <div class="form-group col-lg-6">
+  <label>Guest House</label>
+  <select class="chosen-select-no-single" class="form-control" id="maisonhote" [(ngModel)]="booking.maisonhote" name="maisonhote">
+  <option *ngFor="let type of types" [value]="type"> {{ type }}</option>
+
+  </select>
+  </div>
+  <div class="form-group col-lg-6 col-left-padding">
+  <label>Hotel</label>
+  <select class="form-control" id="hotel" [(ngModel)]="booking.hotel" name="hotel">
+    <option *ngFor="let type of types1" [value]="type"> {{ type }}</option>
+
+  </select>
+  </div>
+  <div class="form-group col-lg-6 col-left-padding">
+    <label>Transport</label>
+    <select class="chosen-select-no-single" class="form-control" id="transport" [(ngModel)]="booking.transport" name="transport">
+      <option *ngFor="let type of types2" [value]="type"> {{ type }}</option>
+
+    </select>
+    </div>
+  <div class="col-lg-12">
+  <div class="checkbox-outer">
+  <input type="checkbox" name="vehicle2" value="Car"> I agree to the <a href="#">terms and conditions.</a>
+  </div>
+  </div>
+  <div class="col-lg-12">
+  <div class="comment-btn">
+  <a  class="btn-blue btn-red" (click)="save()" >Book Now</a>
+  </div>
+  </div>
+  </div>
+  </form>
+  </div>
+  </div>
+  <div id="sidebar-sticky" class="col-lg-4">
+  <aside class="detail-sidebar sidebar-wrapper">
+
+  <div class="sidebar-item sidebar-helpline">
+  <div class="sidebar-helpline-content">
+  <h3>Any Questions?</h3>
+  <p>Lorem ipsum dolor sit amet, consectet ur adipiscing elit, sedpr do eiusmod tempor incididunt ut.</p>
+  <p><i class="flaticon-phone-call"></i> (012)-345-6789</p>
+  <p><i class="flaticon-mail"></i> <a href="https://htmldesigntemplates.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7d3c8d2d5c9d3d5c6d1c2cbe7d3c2d4d3cac6cecb89c4c8ca">[email&#160;protected]</a></p>
+  </div>
+  </div>
+  </aside>
+  </div>
+  </div>
+  </div>
+  </section>
+  <app-footerfront></app-footerfront>
